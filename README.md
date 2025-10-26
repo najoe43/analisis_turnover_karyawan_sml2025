@@ -25,7 +25,7 @@ Proyek machine learning untuk memprediksi turnover karyawan berdasarkan dataset 
 ---
 
 ## Domain Proyek: Sumber Daya Manusia  
-Proyek ini berfokus pada prediksi **turnover** atau perpindahan/keluar karyawan di sebuah perusahaan menggunakan dataset kompetisi Kaggle “Tugas 1 SML A-2025”. Dataset ini mencakup profil karyawan, lingkungan kerja, dan status keluar atau tidak. :contentReference[oaicite:2]{index=2}  
+Proyek ini berfokus pada prediksi **turnover** atau perpindahan/keluar karyawan di sebuah perusahaan menggunakan dataset kompetisi Kaggle “Tugas 1 SML A-2025”. Dataset ini mencakup profil karyawan, lingkungan kerja, dan status keluar atau tidak. 
 
 ### Referensi  
 - Dataset: [Tugas 1 SML A-2025 – Kaggle](https://www.kaggle.com/competitions/tugas-1-sml-a-2025/data)  
