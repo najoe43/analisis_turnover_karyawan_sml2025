@@ -1,10 +1,13 @@
 # analisis_turnover_karyawan_sml2025
 Proyek machine learning untuk memprediksi turnover karyawan berdasarkan dataset kompetisi Kaggle Tugas 1 SML A-2025
-# Laporan Proyek Machine Learning  
-## Prediksi Turnover Karyawan  
-**Nama:** [Isi Nama Kamu]  
-**NIM / ID:** [Isi NIM atau ID Kamu]  
+# Laporan Proyek Machine Learning 
 
+## Prediksi Turnover Karyawan  
+**Nama:**
+1. Najwa Allena Eka P.S (5003231025)
+2. Najwa Putri Lathifah (5003231026)
+3. Raisa Dinar Izzati (5003231028)
+   
 ---
 
 ## Daftar Isi  
