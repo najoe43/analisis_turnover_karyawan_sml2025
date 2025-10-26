@@ -65,9 +65,11 @@ Langkah‐langkah yang dilakukan:
 4. Menangani class imbalance jika target “Attrition: Yes” sangat sedikit (contoh: oversampling, undersampling).  
 5. Split data ke train & test (misal 80% train, 20% test) atau menggunakan cross‐validation.  
 
+### Histogram Semua Variabel Numerik
+![Histogram Semua Variabel Numerik](C:\Users\NAJWA\Pictures\Screenshots\Screenshot 2025-10-26 191202.png)
 ---
 
-## Modeling  
+## Modelling  
 Model yang diuji:  
 - Logistic Regression  
 - Random Forest  
