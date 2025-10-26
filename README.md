@@ -18,9 +18,9 @@ Proyek machine learning untuk memprediksi turnover karyawan berdasarkan dataset 
   - [Goals](#goals)  
 - [Data Understanding](#data-understanding)  
 - [Data Preparation](#data-preparation)  
-- [Modeling](#modeling)  
+- [Modelling](#modelling)  
 - [Evaluation](#evaluation)  
-- [Deployment / Kesimpulan](#deployment--kesimpulan)  
+- [Kesimpulan](#kesimpulan)  
 
 ---
 
@@ -48,12 +48,42 @@ Tingkat keluar-masuk karyawan (attrition) merupakan salah satu permasalahan pent
 ## Data Understanding  
 Dataset yang digunakan pada proyek ini diperoleh dari situs [Tugas 1 SML A-2025 – Kaggle](https://www.kaggle.com/competitions/tugas-1-sml-a-2025/data). 
 Dataset ini terdiri dari 1170 data karyawan yang berisi 31 variabel seperti
-- `Age`  
-- `JobRole`  
-- `MonthlyIncome`  
-- `YearsAtCompany`  
-- `Attrition` (target: “Yes”/“No”)
-- dan variabel yang lainnya
+- id : ID unik karyawan untuk identifikasi.
+- Age : Usia karyawan.
+- BusinessTravel : Frekuensi perjalanan dinas karyawan (contoh: Non-Travel, Travel_Rarely, Travel_Frequently).
+- DailyRate :  Gaji harian.
+- Department :  Departemen tempat karyawan bekerja (contoh: Sales, Research & Development, Human Resources).
+- DistanceFromHome : Jarak tempat tinggal karyawan ke kantor.
+- Education : Tingkat pendidikan terakhir: 1 = Below College, 2 = College, 3 = Bachelor, 4 = Master, 5 = Doctor.
+- EducationField : Bidang studi terakhir karyawan (contoh: Life Sciences, Medical, Marketing).
+- EmployeeCount : Jumlah karyawan (selalu 1 dalam dataset).
+- EmployeeNumber : Nomor unik karyawan dalam sistem HR.
+- EnvironmentSatisfaction : Tingkat kepuasan terhadap lingkungan kerja: 1 = Low, 2 = Medium, 3 = High, 4 = Very High.
+- Gender : Jenis kelamin karyawan (Male/Female).
+- HourlyRate : Upah per jam.
+- JobInvolvement : Tingkat keterlibatan pekerjaan: 1 = Low, 2 = Medium, 3 = High, 4 = Very High.
+- JobLevel : Level jabatan karyawan.
+- JobRole : Posisi/jabatan spesifik karyawan (contoh: Sales Executive, Research Scientist).
+- JobSatisfaction : Tingkat kepuasan pekerjaan: 1 = Low, 2 = Medium, 3 = High, 4 = Very High.
+- MaritalStatus : Status pernikahan karyawan (Single, Married, Divorced).
+- MonthlyIncome : Gaji bulanan karyawan.
+- MonthlyRate : Tarif bulanan karyawan.
+- NumCompaniesWorked : Jumlah perusahaan tempat karyawan pernah bekerja sebelumnya.
+- Over18 : Status usia di atas 18 tahun (selalu Y dalam dataset).
+- OverTime : Apakah karyawan sering lembur (Yes/No).
+- PercentSalaryHike : Persentase kenaikan gaji tahunan terakhir.
+- PerformanceRating : Penilaian kinerja terakhir: 1 = Low, 2 = Good, 3 = Excellent, 4 = Outstanding.
+- RelationshipSatisfaction : Tingkat kepuasan terhadap hubungan kerja: 1 = Low, 2 = Medium, 3 = High, 4 = Very High.
+- StandardHours : Jam kerja standar (selalu 80 dalam dataset).
+- StockOptionLevel : Level kepemilikan saham perusahaan.
+- TotalWorkingYears : Total tahun pengalaman kerja.
+- TrainingTimesLastYear : Jumlah pelatihan yang diikuti dalam setahun terakhir.
+- WorkLifeBalance : Tingkat keseimbangan kerja–hidup: 1 = Bad, 2 = Good, 3 = Better, 4 = Best.
+- YearsAtCompany : Total tahun bekerja di perusahaan saat ini.
+- YearsInCurrentRole : Total tahun di posisi/jabatan saat ini.
+- YearsSinceLastPromotion : Tahun sejak promosi terakhir.
+- YearsWithCurrManager : Tahun bekerja dengan manajer saat ini.
+- Attrition : Target: apakah karyawan keluar dari perusahaan (1 = Yes/ 0 = No).
 
 ---
 
@@ -65,28 +95,26 @@ Langkah‐langkah yang dilakukan:
 4. Menangani class imbalance jika target “Attrition: Yes” sangat sedikit (contoh: oversampling, undersampling).  
 5. Split data ke train & test (misal 80% train, 20% test) atau menggunakan cross‐validation.  
 
-### Histogram Semua Variabel Numerik
-![Histogram Semua Variabel Numerik](C:\Users\NAJWA\Pictures\Screenshots\Screenshot 2025-10-26 191202.png)
 ---
 
 ## Modelling  
-Model yang diuji:  
-- Logistic Regression  
-- Random Forest  
-- XGBoost / LightGBM  
-- (Opsional) Neural Network  
-
-Model terbaik: **[Isi model terbaik]** dengan metrik akurasi / AUC / F1‐score terbaik.  
-Contoh: “Random Forest mencapai akurasi 0.87 dan AUC 0.92”.
-
-📌 Sertakan snippet kode atau diagram arsitektur (bila ada) untuk memperkuat dokumentasi.  
+Model yang digunakan:   
+- LightGBM  
+ 
+Menggunnakan estimasi model terbaik yaitu LightGBM dengan metrik akurasi / AUC / F1‐score terbaik.  
 
 ---
 
 ## Evaluation  
-- Akurasi: [isi nilai]  
-- Precision, Recall, F1 Score: [isi nilai masing‐masing]  
-- ROC-AUC: [isi nilai]  
-- Confusion Matrix:  
-  ```markdown
-  ![Confusion Matrix](img/confusion_matrix.png)
+- Akurasi: 0.8814 
+- Precision : 0.7083
+- Recall : 0.4474
+- F1 Score : 0.5484
+- AUC : 0.7844  
+
+---
+
+## Kesimpulan 
+Model LightGBM (LGBMClassifier) yang dikembangkan dengan preprocessing dan feature engineering berhasil memberikan performa yang cukup baik dalam memprediksi kemungkinan attrition atau keluarnya karyawan dari perusahaan. Berdasarkan hasil evaluasi, model memperoleh akurasi sebesar 0.8814, yang menunjukkan kemampuan model untuk mengklasifikasikan sebagian besar data dengan benar. Nilai precision sebesar 0.7083 mengindikasikan bahwa dari seluruh prediksi karyawan yang diperkirakan akan keluar, sekitar 70% di antaranya benar-benar keluar. Sementara itu, recall sebesar 0.4474 menunjukkan bahwa model masih melewatkan sebagian kasus karyawan yang benar-benar keluar, namun tetap memberikan keseimbangan yang cukup baik dengan nilai F1-score 0.5484. Nilai AUC sebesar 0.7844 menandakan model memiliki kemampuan yang baik dalam membedakan antara karyawan yang keluar dan yang bertahan.
+
+Dari hasil ini, dapat disimpulkan bahwa faktor-faktor seperti masa kerja karyawan (YearsAtCompany), frekuensi promosi (YearsSinceLastPromotion), pendapatan bulanan (MonthlyIncome), dan lembur (OverTime) berperan penting dalam menentukan risiko attrition. Model ini dapat digunakan oleh perusahaan sebagai alat bantu pengambilan keputusan untuk mendeteksi lebih awal karyawan yang berpotensi keluar, sehingga langkah-langkah preventif seperti peningkatan kepuasan kerja, pemberian promosi tepat waktu, atau manajemen beban kerja dapat dilakukan untuk mengurangi tingkat turnover karyawan.
