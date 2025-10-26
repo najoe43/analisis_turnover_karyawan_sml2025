@@ -1,4 +1,4 @@
-# analisis_turnover_karyawan_sml2025
+# analisis_attrition_karyawan_sml2025
 Proyek machine learning untuk memprediksi turnover karyawan berdasarkan dataset kompetisi Kaggle Tugas 1 SML A-2025
 # Laporan Proyek Machine Learning 
 
@@ -25,37 +25,35 @@ Proyek machine learning untuk memprediksi turnover karyawan berdasarkan dataset 
 ---
 
 ## Domain Proyek: Sumber Daya Manusia  
-Proyek ini berfokus pada prediksi **turnover** atau perpindahan/keluar karyawan di sebuah organisasi menggunakan dataset kompetisi Kaggle “Tugas 1 SML A-2025”. Dataset ini mencakup profil karyawan, lingkungan kerja, dan status keluar atau tidak. :contentReference[oaicite:2]{index=2}  
+Proyek ini berfokus pada prediksi **turnover** atau perpindahan/keluar karyawan di sebuah perusahaan menggunakan dataset kompetisi Kaggle “Tugas 1 SML A-2025”. Dataset ini mencakup profil karyawan, lingkungan kerja, dan status keluar atau tidak. :contentReference[oaicite:2]{index=2}  
 
 ### Referensi  
 - Dataset: [Tugas 1 SML A-2025 – Kaggle](https://www.kaggle.com/competitions/tugas-1-sml-a-2025/data)  
-- Dokumentasi/Instruksi kompetisi  
-- Artikel/teori terkait turnover karyawan  
 
 ---
 
 ## Business Understanding  
 
 ### Problem Statements  
-- Bagaimana memprediksi apakah seorang karyawan akan **keluar** dari organisasi (turnover) berdasarkan variabel yang tersedia?  
-- Faktor‐faktor apa yang paling signifikan mempengaruhi keputusan karyawan untuk keluar?  
+Tingkat keluar-masuk karyawan (attrition) merupakan salah satu permasalahan penting bagi perusahaan karena dapat menimbulkan kerugian, baik dari segi biaya rekrutmen, pelatihan, maupun penurunan produktivitas kerja. Ketika banyak karyawan yang keluar, proses adaptasi dan efisiensi tim jadi terganggu. Oleh karena itu, perusahaan perlu memahami faktor-faktor yang memengaruhi keputusan karyawan untuk keluar dan memprediksi kemungkinan tersebut sedini mungkin agar dapat dicegah sedini mungkin.
 
-### Goals  
-- Membangun model klasifikasi yang dapat memprediksi status keluar/karyawan bertahan dengan akurasi yang tinggi.  
-- Mengidentifikasi fitur (variabel) utama yang menjadi indikator tinggi untuk turnover.  
-- Menyajikan insight yang dapat digunakan oleh manajemen HR untuk mempertahankan karyawan.  
+### Goals   
+- Membuat model untuk memprediksi apakah seorang karyawan akan keluar dari perusahaan atau tidak.
+- Mengetahui faktor-faktor apa saja yang paling berpengaruh terhadap keputusan karyawan keluar.
+- Menghasilkan model dengan performa optimal menggunakan pendekatan hyperparameter tuning (GridSearchCV) dan evaluasi berbasis metrik AUC, akurasi, presisi, recall, serta F1-score.
+- Memberikan saran yang dapat membantu HR dalam menjaga karyawan tetap bertahan di perusahaan.
 
 ---
 
 ## Data Understanding  
-Dataset terdiri dari [jumlah observasi jika diketahui] karyawan dengan sejumlah variabel demografis, jabatan, lingkungan kerja, dan status turnover. Contoh variabel:  
+Dataset yang digunakan pada proyek ini diperoleh dari situs [Tugas 1 SML A-2025 – Kaggle](https://www.kaggle.com/competitions/tugas-1-sml-a-2025/data). 
+Dataset ini terdiri dari 1170 data karyawan yang berisi 31 variabel seperti
 - `Age`  
 - `JobRole`  
 - `MonthlyIncome`  
 - `YearsAtCompany`  
-- `Attrition` (target: “Yes”/“No”)  
-
-Pastikan kamu menyebutkan jumlah baris, jumlah variabel, missing values, dan sedikit gambaran distribusi.  
+- `Attrition` (target: “Yes”/“No”)
+- dan variabel yang lainnya
 
 ---
 
